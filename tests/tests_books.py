@@ -37,19 +37,34 @@ class TestGetAllBooks:
 
     def test_with_limit_is_between_accepted_range(self):
         # limit is between 1-20
-        pass
+        response = get_all_books(limit=2)
+        assert response.status_code == 200
+        assert len(response.json()) == 2
 
     def test_with_limit_is_1(self):
-        pass
+        response = get_all_books(limit = 1)
+        assert response.status_code == 200
+        assert len(response.json()) == 1
 
     def test_with_limit_is_20(self):
-        pass
+        response = get_all_books(limit=20)
+        assert response.status_code == 200
+        assert len(response.json()) == 6
 
     def test_with_limit_positive_and_lower_than_accepted_range(self):
-        pass
+        response = get_all_books(limit=0)
+        assert response.status_code == 200
+        assert len(response.json())
+
 
     def test_with_limit_greater_than_accepted_range(self):
-        pass
+        response = get_all_books(limit=25)
+        assert response.status_code == 400
+        response_data = response.json()
+        expected = "Invalid value for query parameter 'limit'. Cannot be greater than 20."
+        actual = response_data.get('error', '')
+        assert expected == actual
+
 
     def test_with_limit_negative(self):
         response = get_all_books(limit= -2)
@@ -57,10 +72,12 @@ class TestGetAllBooks:
         assert response.json().get('error', '') == "Invalid value for query parameter 'limit'. Must be greater than 0."
 
     def test_with_limit_is_special_char(self):
-        pass
+        response = get_all_books(limit='@')
+        assert response.status_code == 200
+        assert len(response.json())
 
 
-class TestGetBookById():
+class TestGetBookById:
 
     def test_when_book_is_valid_and_book_exists_in_db(self):
         response = get_book_by_id(2)
@@ -68,16 +85,36 @@ class TestGetBookById():
         assert response.json()
 
     def test_when_book_id_is_valid_and_book_does_not_exist_in_db(self):
-        pass
+        response = get_book_by_id(7)
+        assert response.status_code == 404
+        response_data = response.json()
+        expected = "No book with id 7"
+        actual = response_data.get('error' '')
+        assert expected == actual
 
     def test_when_book_id_is_a_negative_number(self):
-        pass
+        response = get_book_by_id(-5)
+        assert response.status_code == 404
+        response_data = response.json()
+        expected = "No book with id -5"
+        actual = response_data.get('error' '')
+        assert expected == actual
 
     def test_when_book_id_is_a_letter(self):
-        pass
+        response = get_book_by_id('p')
+        assert response.status_code == 404
+        response_data = response.json()
+        expected = "No book with id NaN"
+        actual = response_data.get('error')
+        assert expected == actual
 
     def test_when_book_id_is_special_char(self):
-        pass
+        response = get_book_by_id('@')
+        assert response.status_code == 404
+        response_data = response.json()
+        expected = "No book with id NaN"
+        actual = response_data.get('error')
+        assert expected == actual
 
 
 
