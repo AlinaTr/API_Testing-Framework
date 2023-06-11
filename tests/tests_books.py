@@ -99,13 +99,9 @@ class TestGetAllBooks:
     def test_when_type_is_not_valid_and_limit_between_accepted_range(self):
         pass
 
-
-
-
-
 class TestGetBookById:
 
-    def test_when_book_is_valid_and_book_exists_in_db(self):
+    def test_when_book_id_is_valid_and_book_exists_in_db(self):
         response = get_book_by_id(2)
         assert response.status_code == 200
         assert response.json()
