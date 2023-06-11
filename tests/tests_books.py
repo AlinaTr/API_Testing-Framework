@@ -56,6 +56,11 @@ class TestGetAllBooks:
         assert response.status_code == 200
         assert len(response.json())
 
+    """
+    Tests bug reports:
+    Get all books nu functioneaza corespunzator atunci cand limita este un 0
+    => vezi test test_with_limit_positive_and_lower_than_accepted_range
+    """
 
     def test_with_limit_greater_than_accepted_range(self):
         response = get_all_books(limit=25)
@@ -75,7 +80,11 @@ class TestGetAllBooks:
         response = get_all_books(limit='@')
         assert response.status_code == 200
         assert len(response.json())
-
+"""
+Tests bug reports:
+Get all books nu functioneaza corespunzator atunci cand limita este un caracter special
+=> vezi test test_with_limit_is_special_char
+"""
 
 class TestGetBookById:
 
