@@ -80,11 +80,28 @@ class TestGetAllBooks:
         response = get_all_books(limit='@')
         assert response.status_code == 200
         assert len(response.json())
-"""
-Tests bug reports:
-Get all books nu functioneaza corespunzator atunci cand limita este un caracter special
-=> vezi test test_with_limit_is_special_char
-"""
+
+    """
+    Tests bug reports:
+    Get all books nu functioneaza corespunzator atunci cand limita este un caracter special
+    => vezi test test_with_limit_is_special_char
+    """
+
+    def test_when_type_is_accepted_and_limit_between_accepted_range(self):
+        pass
+
+    def test_when_type_is_not_accepted_and_limit_outside_accepted_range(self):
+        pass
+
+    def test_when_type_is_valid_type_but_not_accepted_and_limit_between_accepted_range(self):
+        pass
+
+    def test_when_type_is_not_valid_and_limit_between_accepted_range(self):
+        pass
+
+
+
+
 
 class TestGetBookById:
 
