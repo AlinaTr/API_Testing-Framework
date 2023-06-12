@@ -2,33 +2,42 @@ from requests_folder.orders import submit_orders,get_all_orders, get_an_order, u
 
 class TestSubmitOrder:
 
-    # token = '6770bcac03389e9765e52186da2a168dc19c7574a7ba436f7fb9b5d5f1ce11c9'
-    #
-    # def test_when_all_data_is_valid(self):
-    #     response = submit_orders(1, 'AlinaTrandafir1111',self.token)
+    token = "c222e0152efecdb053b82b02ff61bffacdcc6ed4f97d7b7bf6ff6a1c148cad72"
+# acest test pica
+    def test_when_all_data_is_valid(self):
+        response = submit_orders(5, 'AlinaTrandafir500',self.token)
+        assert response.status_code == 201
+        assert len(response.json())
+
 
     def test_when_token_is_associated_with_a_different_customer_name(self):
+        response = submit_orders(6, "AlinaTranda", self.token)
+        assert response.status_code == 201
+        assert response.json()
+
+    def test_when_book_is_not_in_stock(self):
         pass
 
 class TestGetAllOrders:
 
-    token = '208873f3fcc3963675d91e7f4de7d06502e9719ad9deee8ef7d6db3036ac6ba0'
-
+    token = 'c222e0152efecdb053b82b02ff61bffacdcc6ed4f97d7b7bf6ff6a1c148cad72'
+#pica
     def test_when_all_data_is_valid(self):
-        response = get_all_orders('AlinaTrandafir115', 'alina115@example.com', self.token)
+        response = get_all_orders(self.token)
         assert response.status_code == 200
-        assert response.json()
+        assert len(response.json())
 
 class TestGetAnOrder:
-
+# pica
     def test_when_all_data_is_valid(self):
-       response= get_an_order("jH2GCbEPPflJ1H4k4KV_K", "AlinaTrandafir115", "alina115@example.com", "208873f3fcc3963675d91e7f4de7d06502e9719ad9deee8ef7d6db3036ac6ba0")
+       response= get_an_order("7wVJu5YKPZIkxAke1ZAla","c222e0152efecdb053b82b02ff61bffacdcc6ed4f97d7b7bf6ff6a1c148cad72")
        assert response.status_code == 200
        assert response.json()
 
 
 class TestUpdateAnOrder:
     pass
+# pica si in Postman
 
 class TestDeleteAnOrder:
     pass
