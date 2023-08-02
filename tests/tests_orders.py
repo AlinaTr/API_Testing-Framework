@@ -3,7 +3,7 @@ from requests_folder.orders import submit_orders, get_all_orders, get_an_order, 
 
 class TestSubmitOrder:
 
-    token = "ba559cc80cdb0b484c663a28a33bfedbe85a2966636d108df528861030c58ab3"
+    token = "da7ffdc096b4a5d28eca684a21fe9caf248c2722238393dfc7a16f7176a2b763"
 
     def test_when_all_data_is_valid(self):
         response = submit_orders(5, 'alinatr502',self.token)
@@ -38,7 +38,7 @@ class TestSubmitOrder:
 
 class TestGetAllOrders:
 
-    token = 'ba559cc80cdb0b484c663a28a33bfedbe85a2966636d108df528861030c58ab3'
+    token = 'da7ffdc096b4a5d28eca684a21fe9caf248c2722238393dfc7a16f7176a2b763'
 
     def test_when_all_data_is_valid(self):
         response = get_all_orders('alinatr502', 'alina502@example.com' , self.token)
@@ -90,7 +90,7 @@ class TestGetAllOrders:
                     """
 
 class TestGetAnOrder:
-    token = 'ba559cc80cdb0b484c663a28a33bfedbe85a2966636d108df528861030c58ab3'
+    token = 'da7ffdc096b4a5d28eca684a21fe9caf248c2722238393dfc7a16f7176a2b763'
 
 
     def test_when_all_data_is_valid(self):
@@ -128,10 +128,10 @@ class TestGetAnOrder:
 
 
 class TestUpdateAnOrder:
-    token = 'ba559cc80cdb0b484c663a28a33bfedbe85a2966636d108df528861030c58ab3'
+    token = 'da7ffdc096b4a5d28eca684a21fe9caf248c2722238393dfc7a16f7176a2b763'
 
     def test_when_all_data_is_valid(self):
-        response = update_an_order('8y_SdA4xMm6ZOajfP0mTp', 'alinatr502', self.token)
+        response = update_an_order('kn9rCNtfEhFbCH7ysPCSL', 'alinatr502', self.token)
         assert response.status_code == 204
         assert response.text == ''
 
@@ -157,12 +157,12 @@ class TestUpdateAnOrder:
         assert expected == actual
 
     def test_when_username_is_invalid(self):
-        response = update_an_order('8y_SdA4xMm6ZOajfP0mTp', 'al', self.token)
+        response = update_an_order('8LiQ7ffTHnbBJHAgycnVM', 'al', self.token)
         assert response.status_code == 204
         assert response.text == ''
 
 class TestDeleteAnOrder:
-    token = 'ba559cc80cdb0b484c663a28a33bfedbe85a2966636d108df528861030c58ab3'
+    token = 'da7ffdc096b4a5d28eca684a21fe9caf248c2722238393dfc7a16f7176a2b763'
 
     def test_when_all_data_is_valid(self):
         response = delete_an_order('sMN_WCz6nTj51C3Zexu51', self.token)

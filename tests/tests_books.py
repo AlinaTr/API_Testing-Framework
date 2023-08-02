@@ -92,13 +92,13 @@ class TestGetAllBooks:
         assert response.status_code == 200
         assert len(response.json())
 
-    # def test_when_type_is_not_accepted_and_limit_outside_accepted_range(self):
-    #     response = get_all_books(type='@', limit=30)
-    #     assert response.status_code == 400
-    #     response_data = response.json()
-    #     expected = "Invalid value for query parameter 'type'. Must be one of: fiction, non-fiction."
-    #     actual = response_data.get('error')
-    #     assert expected == actual
+    def test_when_type_is_not_accepted_and_limit_outside_accepted_range(self):
+        response = get_all_books(type='@', limit=30)
+        assert response.status_code == 400
+        response_data = response.json()
+        expected = "Invalid value for query parameter 'type'. Must be one of: fiction, non-fiction."
+        actual = response_data.get('error')
+        assert expected == actual
 
     def test_when_type_is_valid_type_but_not_accepted_and_limit_between_accepted_range(self):
         response = get_all_books(type='romance', limit=3)
@@ -109,7 +109,7 @@ class TestGetAllBooks:
         assert expected == actual
 
     def test_when_type_is_not_valid_and_limit_between_accepted_range(self):
-        response = get_all_books(type='!', limit=50)
+        response = get_all_books(type='!', limit=19)
         assert response.status_code == 400
         response_data = response.json()
         expected = "Invalid value for query parameter 'type'. Must be one of: fiction, non-fiction."
