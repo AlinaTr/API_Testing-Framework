@@ -31,8 +31,7 @@ The API is available at https://simple-books-api.glitch.me
 * Delete order:  we use the HTTP Method "DELETE"
 
 ## 🔶 Configuration
-<img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/carbon.png" width="256"/>
-<img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/Pycharm-auth.png" width="256"/>
+<img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/carbon.png" width="256"/> <img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/Pycharm-auth.png" width="256"/>
 
 
 ## 🔶 Troubleshooting
