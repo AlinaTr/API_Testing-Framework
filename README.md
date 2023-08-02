@@ -35,3 +35,4 @@ The API is available at https://simple-books-api.glitch.me
 
 
 ## 🔶 Troubleshooting
+-  The access token is valid for 7 days. To run test scenarios again after 7 days, a new token has to be generated. 
