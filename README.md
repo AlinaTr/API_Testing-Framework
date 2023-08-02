@@ -8,7 +8,6 @@ Welcome to my project! For this project I have used this API for testing:
 This API allows you to reserve a book.
 The API is available at https://simple-books-api.glitch.me
 
-* To test this
 
 ## 🔶 How to Install and Run the Project
 
@@ -24,3 +23,16 @@ The API is available at https://simple-books-api.glitch.me
 <img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/Capture.JPG" width="256"/>
 - click on  Run green button at the top of the page, to run all tests in that current file. 
 <img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/Capture2.JPG" width="256"/>
+
+## 🔶 Usage
+* Return list of books, get book/books by ID: we use the HTTP Method "GET"
+* Submit an order:  we use the HTTP Method "POST"
+* Update order:  we use the HTTP Method "PUT/PATCH"
+* Delete order:  we use the HTTP Method "DELETE"
+
+## 🔶 Configuration
+<img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/carbon.png" width="256"/>
+<img src="https://github.com/AlinaTr/API_Testing-Framework/blob/main/Pycharm-auth.png" width="256"/>
+
+
+## 🔶 Troubleshooting
