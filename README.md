@@ -1,4 +1,9 @@
 # API_Testing
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/AlinaTr/API_Testing-Framework?style=flat-square&logo=github&logoColor=black)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/AlinaTr/API_Testing-Framework/main?style=flat-square&labelColor=black)
+![GitHub top language](https://img.shields.io/github/languages/top/AlinaTr/API_Testing-Framework?labelColor=darkmagenta&color=lavender)
+![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/AlinaTr/API_Testing-Framework)
+
 
 ## 🔶 Description
 Welcome to my project! For this project I have used this API for testing:
